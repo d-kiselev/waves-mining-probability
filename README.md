@@ -1,13 +1,13 @@
 # waves-mining-probability
-Mining probability in Waves blockchain
+Mining probability in Waves blockchain.
 
 # Input
 Address for which it is needed to calculate the probability of mining.
 
 # Output
 
-* number of blocks (within the last 24 hours).
-* stake share of the address (at current height).
-* estimated blocks = stake share * number of blocks.
-* mined blocks (within the last 24 hours).
-* performance ratio = mined blocks / estimated blocks.
+* number of blocks (within the last 24 hours)
+* stake share of the address (at current height)
+* estimated blocks = stake share * number of blocks
+* mined blocks (within the last 24 hours)
+* performance ratio = mined blocks / estimated blocks
