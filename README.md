@@ -2,7 +2,7 @@
 Mining probability in Waves blockchain.
 
 # Input
-Address for which it is needed to calculate the probability of mining.
+Address for which it is needed to calculate the probability of mining (is equal to stake share of the address).
 
 # Output
 
