@@ -5,19 +5,6 @@ using WavesCS;
 
 namespace wavesminingprobability
 {
-    static class NodeExtentions
-    {
-        public static decimal GetGenBalance(this Node node, string address)
-        {
-            return node.GetObject($"addresses/effectiveBalance/{address}/1000").GetLong("balance");
-        }
-
-        public static IEnumerable<Dictionary<string, object>> GetHeadersSequence(this Node node, long from, long to)
-        {
-            return node.GetObjects($"blocks/headers/seq/{from}/{to}");
-        }
-    }
-
     class MainClass
     {
         public static void Main(string[] args)
@@ -81,11 +68,25 @@ namespace wavesminingprobability
             var estimatedBlocks = share * numBlocks;
             var performanceRatio = minedBlocks / estimatedBlocks;
 
+            const int decimals = 2;
             Console.WriteLine($"number of blocks = {numBlocks}");
-            Console.WriteLine($"stake share = {Math.Round(share * 100, 2)}%");
-            Console.WriteLine($"estimated blocks = {Math.Round(estimatedBlocks, 2)}");
+            Console.WriteLine($"stake share = {Math.Round(share * 100, decimals)}%");
+            Console.WriteLine($"estimated blocks = {Math.Round(estimatedBlocks, decimals)}");
             Console.WriteLine($"mined blocks = {minedBlocks}");
-            Console.WriteLine($"performance ratio = {Math.Round(performanceRatio, 2)}");
+            Console.WriteLine($"performance ratio = {Math.Round(performanceRatio, decimals)}");
+        }
+    }
+
+    static class NodeExtentions
+    {
+        public static decimal GetGenBalance(this Node node, string address)
+        {
+            return node.GetObject($"addresses/effectiveBalance/{address}/1000").GetLong("balance");
+        }
+
+        public static IEnumerable<Dictionary<string, object>> GetHeadersSequence(this Node node, long from, long to)
+        {
+            return node.GetObjects($"blocks/headers/seq/{from}/{to}");
         }
     }
 }
