@@ -9,5 +9,5 @@ Address for which it is needed to calculate the probability of mining.
 * number of blocks (within the last 24 hours)
 * stake share of the address (at current height)
 * estimated blocks = stake share * number of blocks
-* mined blocks (within the last 24 hours)
+* number of blocks mined by the address (within the last 24 hours)
 * performance ratio = mined blocks / estimated blocks
